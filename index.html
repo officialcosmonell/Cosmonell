@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmonell - Premium Domain for Sale</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      user-select: none;
+    }
+
+    #introVideo {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+      z-index: 1;
+    }
+
+    #finalScreen {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("final.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.2s ease;
+      z-index: 2;
+    }
+
+    #finalScreen.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .controls {
+      position: absolute;
+      top: 28px;
+      right: 32px;
+      z-index: 5;
+    }
+
+    .replay {
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: 0.25s ease;
+    }
+
+    .replay:hover {
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-1px);
+    }
+
+    .bottom-links {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 34px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 42px;
+      z-index: 5;
+    }
+
+    .link-btn {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(0,0,0,0.34);
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .link-btn:hover {
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-1px);
+    }
+
+    #modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      padding: 24px;
+    }
+
+    #modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      max-width: 780px;
+      width: 100%;
+      max-height: 82vh;
+      overflow-y: auto;
+      background: rgba(5, 8, 18, 0.88);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: 0 0 50px rgba(40,120,255,0.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .modal-box h2 {
+      margin-top: 0;
+      font-size: 24px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .modal-box p {
+      color: #d7dce8;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .close {
+      margin-top: 18px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: transparent;
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .bottom-links {
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+        bottom: 24px;
+        padding: 0 20px;
+      }
+
+      .controls {
+        top: 18px;
+        right: 18px;
+      }
+
+      .link-btn, .replay {
+        font-size: 12px;
+        padding: 11px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false;">
+
+  <video id="introVideo" autoplay muted playsinline preload="auto" controlslist="nodownload noplaybackrate">
+    <source src="intro.mp4" type="video/mp4" />
+  </video>
+
+  <section id="finalScreen">
+    <div class="controls">
+      <button class="replay" id="replayBtn">🔊 🎬 Replay with sound</button>
+    </div>
+
+    <div class="bottom-links">
+      <a
+        class="link-btn"
+        href="https://sedo.com/search/details/?partnerid=324561&language=e&domain=cosmonell.com&origin=sales_lander_15&utm_medium=Parking&utm_campaign=offerpage"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on Sedo
+      </a>
+
+      <button class="link-btn" id="openInfo">
+        Explore Brand Package
+      </button>
+    </div>
+  </section>
+
+  <div id="modal">
+    <div class="modal-box">
+      <h2>Cosmonell Brand Package</h2>
+
+      <p>
+        The acquisition of Cosmonell.com includes the transfer of matching official brand assets and an established digital presence, including Cosmonell Official profiles across X, Instagram, TikTok, and YouTube.
+      </p>
+
+      <p>
+        These official profiles were secured and created alongside the domain as part of a unified brand vision, remaining clean and reserved for future development. All associated accounts are connected to the dedicated official email address created specifically for the Cosmonell brand, which will also be transferred to the buyer as part of the acquisition process.
+      </p>
+
+      <p>
+        The package also includes a premium visual identity ecosystem featuring a high-end logo and a cinematic 6-second brand intro, designed for immediate use across websites, social platforms, presentations, and future media expansion.
+      </p>
+
+      <p>
+        Unified branding, visual consistency, and ready-to-use assets create a seamless global ecosystem prepared for immediate deployment and long-term growth.
+      </p>
+
+      <p>
+        All transfers will be conducted securely in coordination with Sedo during the transaction process.
+      </p>
+
+      <button class="close" id="closeInfo">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById("introVideo");
+    const finalScreen = document.getElementById("finalScreen");
+    const replayBtn = document.getElementById("replayBtn");
+    const openInfo = document.getElementById("openInfo");
+    const closeInfo = document.getElementById("closeInfo");
+    const modal = document.getElementById("modal");
+
+    video.addEventListener("ended", () => {
+      finalScreen.classList.add("active");
+    });
+
+    replayBtn.addEventListener("click", () => {
+      finalScreen.classList.remove("active");
+      video.currentTime = 0;
+      video.muted = false;
+      video.play();
+    });
+
+    openInfo.addEventListener("click", () => {
+      modal.classList.add("active");
+    });
+
+    closeInfo.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("active");
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toUpperCase() === "U")
+      ) {
+        e.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>
